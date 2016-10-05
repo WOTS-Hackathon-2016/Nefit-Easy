@@ -20,7 +20,7 @@ Token='<CHANGE WITH YOUR TOKEN>'	#enter token
 #Fixed
 ##################################################################################################
 Program="curl" 
-Oauth2Header='--header "Authorization: Bearer '
+Oauth2Header='--insecure --header "Authorization: Bearer '
 Oauth2HeaderEnd='"' 
 
 #DEBUG
@@ -98,7 +98,7 @@ elif [ $1 = "PUT" ]; then
     # SET MANUAL ROOM TEMPERATURE
     # todo Check if $3 is greater than 5 and smaller than 30
       json='{"value":'$3'}'
-      setting='heatingCircuits/hc1/temperatureRoomSetpoint'
+      setting='heatingCircuits/hc1/temperatureRoomManual'
   
   elif [ $2 = "USER-MODE" ]; then
     # SET THE USER MODE MANUAL, OR .....
